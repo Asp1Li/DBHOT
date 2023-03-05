@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //String 字符串对象，字符串常用方法
+        let str = 'hellow 1e34ewer'
+        let a = 'acb'
+        //Length 获取字符串的长度
+        console.log(str.length);//15
+        //split()将一个字符串切割数组
+        console.log(str.split());//["hellow 1e34ewer"]
+        //concat() 连接字符串
+        console.log(str.concat(a));//hellow 1e34eweracb
+        //indexOf()返回一个子字符串在原始字符串中的索引值。如果没有找到，则返回固定值 -1
+        console.log(str.indexOf('l'));//2
+        console.log(str.indexOf('t'));//-1
+        //lastIndexOf() 从后向前检索一个字符串
+        console.log(str.lastIndexOf(4));//10
+        //slice() 抽取一个子串
+        console.log(str.slice(0,3));//hel
+
+        //Array 数组对象，数组常用方法
+        let arr = [1,2,43,'asd',4]
+        let arrobj = [{name:'q',age:1},{name:'w',age:2}]
+        //join() 将一个数组转成字符串。返回一个字符串
+        console.log(arr.join('--'));//1--2--43--asd--4
+        console.log(arr.reverse());//[4, 'asd', 43, 2, 1]
+        //shift()删除数组中第一个元素，返回删除的那个值，并将长度减 1
+        console.log(arr.shift());//4
+        console.log(arr);//['asd', 43, 2, 1]
+        //pop()删除数组中最后一个元素，返回删除的那个值，并将长度减 1
+        console.log(arr.pop());//1
+        console.log(arr);//['asd', 43, 2]
+        //unshift() 往数组前面添加一个或多个数组元素，长度会改变
+        console.log(arr.unshift(1,'r'));//5
+        console.log(arr);//[1, 'r', 'asd', 43, 2]
+        //push() 往数组结尾添加一个或多个数组元素，长度会改变
+        console.log(arr.push('k','oi'));//7
+        console.log(arr);//[1, 'r', 'asd', 43, 2, 'k', 'oi']
+        //concat() 连接数组
+        console.log(arr.concat(arrobj,'1'))//[1, 'r', 'asd', 43, 2, 'k', 'oi', {…}, {…}, '1']
+        //slice() 切割数组，返回数组的一部分
+        console.log(arr.slice(2,5));//['asd', 43, 2]
+        console.log(arr);//[1, 'r', 'asd', 43, 2, 'k', 'oi']
+        //splice()插入、删除或替换数组的元素
+        console.log(arr.splice(1,2,'ff'));// ['r', 'asd']
+        console.log(arr);// [1, 'ff', 43, 2, 'k', 'oi']
+        //forEach()遍历所有元素
+       arr.forEach((i)=>{
+        console.log(i)
+       })
+       //every()判断所有元素是否都符合条件
+       console.log(arr.every((i)=>{
+        i == 'ff'
+       }));//false
+       //sort()对数组元素进行排序
+       console.log(arr.sort((a,b)=>{return a-b
+       }));// [1, 'ff', 2, 43, 'k', 'oi']
+       console.log(arr.sort((a,b)=>{return b-a
+       }));// [1, 'ff', 43, 2, 'k', 'oi']
+       //map()对元素重新组装，生成新数组
+       console.log(arr.map((i)=>{
+        return i+'ss'
+       }));// ['1ss', 'ffss', '43ss', '2ss', 'kss', 'oiss']
+       console.log(arr);// [1, 'ff', 43, 2, 'k', 'oi']
+       //filter()过滤符合条件的元素
+       console.log(arr.filter((i)=>{
+        return i=='oi'
+       }));//['oi']
+       console.log(arr);//[1, 'ff', 43, 2, 'k', 'oi']
+       //find() 查找 返回满足提供的测试函数的第一个元素的值。否则返回 undefined。
+       console.log(arr.find((i)=>{
+        // console.log(i)
+        return i ==1
+       }));//1
+       //findIndex 查找 返回满足提供的测试函数的第一个元素的下标。否则返回 -1
+       console.log(arr.findIndex((i)=>{
+        return i == 'k'
+       }));//4
+       //some() 判断是否有一个满足条件 ，返回布尔值
+       console.log(arr.some((i)=>{
+        return i == 1
+       }));//true
+
+
+       //Math 数学对象，数学常用方法
+       //Math.PI 圆周率
+       //Math.abs() 绝对值
+       //Math.ceil() 向上取整(整数加 1，小数去掉)
+       //Math.floor() 向下取整(直接去掉小数)
+       //Math.round() 四舍五入
+       //Math.pow(x，y) 求 x 的 y 次方
+    </script>
+</body>
+</html>
